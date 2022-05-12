@@ -1,0 +1,11 @@
+.sidebar {
+  background-color: blue;
+
+}
+
+.sidebar__link {
+  color: #fff;
+}
+.sidebar__link_active {
+  color: red;
+}
