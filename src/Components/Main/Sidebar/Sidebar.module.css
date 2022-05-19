@@ -3,9 +3,11 @@
 
 }
 
-.sidebar__link {
+.sidebar__item a{
   color: #fff;
+  text-decoration: none;
 }
-.sidebar__link_active {
+
+a.sidebar__link_active {
   color: red;
 }

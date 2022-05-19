@@ -1,22 +1,20 @@
 import './App.css';
-import Header from './Header/Header';
-import Main from './Main/Main';
-import Footer from './Footer/Footer';
-
-
+import Header from './Components/Header/Header';
+import Main from './Components/Main/Main';
+import Footer from './Components/Footer/Footer';
+import {BrowserRouter} from "react-router-dom";
 
 
 function App() {
   return (
-    <div className="wrapper">
-      <Header />
-      <Main />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <div className="wrapper">
+        <Header/>
+        <Main/>
+        <Footer/>
+      </div>
+    </BrowserRouter>
   );
 }
-
-
-
 
 export default App;
