@@ -11,7 +11,7 @@ function App(props) {
     <BrowserRouter>
       <div className="wrapper">
         <Header/>
-        <Main state={props.state.main}/>
+        <Main state={props.state.main} addPost={props.addPost}/>
         <Footer/>
       </div>
     </BrowserRouter>

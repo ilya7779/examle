@@ -1,3 +1,4 @@
+import React from 'react';
 import message from './Messages.module.css';
 import {Outlet} from "react-router-dom";
 import MessagesName from "./MessagesName/MessagesName"
@@ -11,6 +12,13 @@ const Messages = (props) => {
   let messageTextElements = props.messageData.messageTextData
     .map( messageText => <MessagesText text={messageText.text}/>);
 
+  let newMessageElement = React.createRef();
+
+  let addNewMessage = () => { (
+      alert (newMessageElement.current.value)
+    )
+  }
+
   return (
     <div className={message.messages}>
       <div className={message.messages__names}>
@@ -18,6 +26,8 @@ const Messages = (props) => {
       </div>
       <div className={message.messages__texts}>
         { messageTextElements }
+        <textarea className={message.messages__newMessage } ref={ newMessageElement } ></textarea>
+        <button className={message.messages__addNewMessage} onClick={ addNewMessage }>Submit</button>
       </div>
       <Outlet/>
     </div>

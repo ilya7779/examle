@@ -7,7 +7,7 @@ const Content = (props) => {
   return (
     <section className={content.content}>
       <Routes>
-        <Route path='profile' element={<Profile posts={props.profileData.posts} />} />
+        <Route path='profile' element={<Profile posts={props.profileData.posts} addPost={props.addPost}/>} />
         <Route path='messages' element={<Messages messageData={props.messageData}/>}>
           <Route index element={<div>Choose a message</div>}/>
           <Route path=':id' element={<div>message</div>}/>
