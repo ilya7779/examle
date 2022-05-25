@@ -5,12 +5,13 @@ import Footer from './Components/Footer/Footer';
 import {BrowserRouter} from "react-router-dom";
 
 
-function App() {
+
+function App(props) {
   return (
     <BrowserRouter>
       <div className="wrapper">
         <Header/>
-        <Main/>
+        <Main state={props.state.main}/>
         <Footer/>
       </div>
     </BrowserRouter>

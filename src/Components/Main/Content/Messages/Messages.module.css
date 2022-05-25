@@ -3,3 +3,16 @@
     grid-template-columns: 2fr 8fr;
     padding: 10px;
 }
+
+.messages__name {
+    display: flex;
+}
+.messages__name a {
+    padding-left: 5px;
+}
+
+.message__icon {
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+}

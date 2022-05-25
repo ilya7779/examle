@@ -1,36 +1,26 @@
 import message from './Messages.module.css';
-import {NavLink, Outlet, Routes} from "react-router-dom";
-
-const MessagesName = (props) => {
-  return (
-    <div className={message.messages__name}>
-      <NavLink to={props.id}>{props.name}</NavLink>
-    </div>
-  )
-}
-const MessagesText = (props) => {
-  return (
-    <div className={message.messages__text}>{props.text}</div>
-  )
-}
+import {Outlet} from "react-router-dom";
+import MessagesName from "./MessagesName/MessagesName"
+import MessagesText from "./MessagesText/MessagesText";
 
 const Messages = (props) => {
-  return (
 
+  let messageNameElements = props.messageData.messageNameData
+    .map( messageName => <MessagesName name={messageName.name} id={messageName.id}/>);
+
+  let messageTextElements = props.messageData.messageTextData
+    .map( messageText => <MessagesText text={messageText.text}/>);
+
+  return (
     <div className={message.messages}>
       <div className={message.messages__names}>
-        <MessagesName name="Ilya" id="1"/>
-        <MessagesName name="Anna" id="2"/>
-        <MessagesName name="Vladislav" id="3"/>
+        { messageNameElements }
       </div>
       <div className={message.messages__texts}>
-        <MessagesText text="It's me"/>
-        <MessagesText text="Hello"/>
-        <MessagesText text="Yo"/>
+        { messageTextElements }
       </div>
       <Outlet/>
     </div>
-
   );
 }
 
