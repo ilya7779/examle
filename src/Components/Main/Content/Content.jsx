@@ -2,13 +2,16 @@ import content from './Content.module.css';
 import Messages from './Messages/Messages';
 import Profile from './Profile/Profile';
 import {Route, Routes} from 'react-router-dom';
+import {updateNewPostText} from "../../../Redux/state";
 
 const Content = (props) => {
   return (
     <section className={content.content}>
       <Routes>
-        <Route path='profile' element={<Profile posts={props.profileData.posts} addPost={props.addPost}/>} />
-        <Route path='messages' element={<Messages messageData={props.messageData}/>}>
+        <Route path='profile' element={<Profile newPost={props.profileData.newPostText}
+                                                posts={props.profileData.posts}
+                                                dispatch={props.dispatch} />} />
+        <Route path='messages' element={<Messages messageData={props.messageData} store={props.store}/>}>
           <Route index element={<div>Choose a message</div>}/>
           <Route path=':id' element={<div>message</div>}/>
         </Route>
