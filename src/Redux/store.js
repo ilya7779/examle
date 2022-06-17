@@ -5,7 +5,6 @@ import sidebarReducer from "./sidebar-reducer";
 
 let store = {
   _state: {
-    header: {},
     main: {
       content: {
         profile: {
@@ -30,13 +29,8 @@ let store = {
           ],
           newMessageBody: ""
         },
-        music: {},
-        news: {},
-        settings: {},
       },
-      sidebar: {},
     },
-    footer: {},
   },
   _callSubscriber() {
     console.log('State changed');
@@ -58,11 +52,6 @@ let store = {
     this._callSubscriber(this._state);
   }
 }
-
-
-
-
-
 
 export default store;
 

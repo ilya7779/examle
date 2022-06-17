@@ -2,7 +2,7 @@ import content from './Content.module.css';
 import Messages from './Messages/Messages';
 import Profile from './Profile/Profile';
 import {Route, Routes} from 'react-router-dom';
-import {updateNewPostText} from "../../../Redux/state";
+// import {updateNewPostText} from "../../../Redux/store";
 
 const Content = (props) => {
   return (

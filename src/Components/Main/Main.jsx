@@ -3,7 +3,6 @@ import Sidebar from './Sidebar/Sidebar';
 import Content from './Content/Content';
 
 const Main = (props) => {
-
   return (
     <main className={main.main}>
       <Sidebar />
