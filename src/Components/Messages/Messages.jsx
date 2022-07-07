@@ -3,26 +3,26 @@ import message from './Messages.module.css';
 import {Outlet} from "react-router-dom";
 import MessagesName from "./MessagesName/MessagesName"
 import MessagesText from "./MessagesText/MessagesText";
-import {sendMessageCreator, updateNewMessageBodyCreator} from "../../../../Redux/messages-reducer";
+import {sendMessageCreator, updateNewMessageBodyCreator} from "../../Redux/messages-reducer";
 
 const Messages = (props) => {
-  let state = props.store.getState().messageData;
+  let state = props.messageData;
 
-  let messageNameElements = props.messageData.messageNameData
-    .map( messageName => <MessagesName name={messageName.name} id={messageName.id}/>);
+  let messageNameElements = state.messageNameData
+    .map( messageName => <MessagesName name={messageName.name} key={messageName.id} id={messageName.id}/>);
 
-  let messageTextElements = props.messageData.messageTextData
-    .map( messageText => <MessagesText text={messageText.text}/>);
+  let messageTextElements = state.messageTextData
+    .map( messageText => <MessagesText text={messageText.text} key={messageText.id}/>);
 
-  let newMessageBody = props.messageData.newMessageBody;
+  let newMessageBody = state.newMessageBody;
 
   let onSendMessageClick = () => {
-    props.store.dispatch(sendMessageCreator());
+    props.sendMessage();
   }
 
   let onNewMessageChange = (e) => {
     let body = e.target.value;
-    props.store.dispatch(updateNewMessageBodyCreator(body));
+    props.updateNewMessageBody(body);
   }
 
   return (

@@ -1,8 +1,12 @@
 import './App.css';
 import Header from './Components/Header/Header';
-import Main from './Components/Main/Main';
 import Footer from './Components/Footer/Footer';
-import {BrowserRouter} from "react-router-dom";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import Profile from "./Components/Profile/Profile";
+import Sidebar from "./Components/Sidebar";
+import MessagesContainer from "./Components/Messages/MessagesContainer";
+import UsersContainer from "./Components/Users/UsersContainer";
+
 
 
 function App(props) {
@@ -10,13 +14,21 @@ function App(props) {
     <BrowserRouter>
       <div className="wrapper">
         <Header/>
-        <Main state={props.state.main}
-              dispatch={props.dispatch}
-              store={props.store} />
+        <Sidebar/>
+        <div className="content">
+          <Routes>
+            <Route path='profile' element={<Profile/>}/>
+            <Route path='messages' element={<MessagesContainer/>}>
+              <Route index element={<div>Choose a message</div>}/>
+              <Route path=':id' element={<div>message</div>}/>
+            </Route>
+            <Route path='users' element={<UsersContainer />} />
+          </Routes>
+        </div>
         <Footer/>
       </div>
     </BrowserRouter>
-  );
+);
 }
 
 export default App;

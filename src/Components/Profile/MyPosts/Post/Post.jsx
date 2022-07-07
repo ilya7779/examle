@@ -1,6 +1,7 @@
-import post from './PostOne.module.css';
+import post from './Post.module.css';
 
-const PostOne = (props) => {
+
+const Post = (props) => {
   return (
     <div className={post.post}>
       <img className={post.post__icon} src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Face-smile.svg/640px-Face-smile.svg.png" alt="" />
@@ -10,4 +11,4 @@ const PostOne = (props) => {
   );
 }
 
-export default PostOne;
+export default Post;

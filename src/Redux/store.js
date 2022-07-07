@@ -5,31 +5,27 @@ import sidebarReducer from "./sidebar-reducer";
 
 let store = {
   _state: {
-    main: {
-      content: {
-        profile: {
-          posts: [
-            {id: 1, message: "Мой пост1", likesCount: 11},
-            {id: 2, message: "Мой пост2", likesCount: 21},
-            {id: 3, message: "Мой пост3", likesCount: 31},
-            {id: 4, message: "Мой пост4", likesCount: 41},
-          ],
-          newPostText: "Hello",
-        },
-        messages: {
-          messageNameData: [
-            {id: '1', name: "Ilya"},
-            {id: '2', name: "Anna"},
-            {id: '3', name: "Vladislav"},
-          ],
-          messageTextData: [
-            {id: 1, text: "It's me"},
-            {id: 2, text: "Hello"},
-            {id: 3, text: "Yo"},
-          ],
-          newMessageBody: ""
-        },
-      },
+    profile: {
+      posts: [
+        {id: 1, message: "Мой пост1", likesCount: 11},
+        {id: 2, message: "Мой пост2", likesCount: 21},
+        {id: 3, message: "Мой пост3", likesCount: 31},
+        {id: 4, message: "Мой пост4", likesCount: 41},
+      ],
+      newPostText: "Hello",
+    },
+    messages: {
+      messageNameData: [
+        {id: '1', name: "Ilya"},
+        {id: '2', name: "Anna"},
+        {id: '3', name: "Vladislav"},
+      ],
+      messageTextData: [
+        {id: 1, text: "It's me"},
+        {id: 2, text: "Hello"},
+        {id: 3, text: "Yo"},
+      ],
+      newMessageBody: ""
     },
   },
   _callSubscriber() {

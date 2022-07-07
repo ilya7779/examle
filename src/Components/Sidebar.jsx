@@ -1,10 +1,12 @@
-import Profile from '../Content/Profile/Profile';
+import Profile from './Profile/Profile';
 import sidebar from './Sidebar.module.css';
 import {NavLink} from "react-router-dom";
 
-const setActive = ({isActive}) => isActive ? sidebar.sidebar__link_active : '';
 
 const Sidebar = (props) => {
+
+  const setActive = ({isActive}) => isActive ? sidebar.sidebar__link_active : '';
+
   return (
     <aside className={sidebar.sidebar}>
       <nav className={sidebar.sidebar__menu}>

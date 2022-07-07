@@ -1,6 +1,0 @@
-.main {
-  display: grid;
-  grid-template: 1fr / minmax(auto, 300px) 1fr;
-  grid-area: main;
-
-}
