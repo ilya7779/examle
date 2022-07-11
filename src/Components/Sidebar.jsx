@@ -17,6 +17,9 @@ const Sidebar = (props) => {
           <li className={sidebar.sidebar__item}>
             <NavLink to="messages" className={setActive}>Messages</NavLink>
           </li>
+          <li className={sidebar.sidebar__item}>
+            <NavLink to="users" className={setActive}>Users</NavLink>
+          </li>
           {/*<li className={sidebar.sidebar__item}>*/}
           {/*  <NavLink to="News" className={setActive}>News</NavLink>*/}
           {/*</li>*/}
