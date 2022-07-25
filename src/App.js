@@ -2,10 +2,10 @@ import './App.css';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import Profile from "./Components/Profile/Profile";
 import Sidebar from "./Components/Sidebar";
 import MessagesContainer from "./Components/Messages/MessagesContainer";
 import UsersContainer from "./Components/Users/UsersContainer";
+import ProfileContainer from "./Components/Profile/ProfileContainer";
 
 
 
@@ -17,7 +17,7 @@ function App(props) {
         <Sidebar/>
         <div className="content">
           <Routes>
-            <Route path='profile' element={<Profile/>}/>
+            <Route path='profile/:userId' element={<ProfileContainer/>}/>
             <Route path='messages' element={<MessagesContainer/>}>
               <Route index element={<div>Choose a message</div>}/>
               <Route path=':id' element={<div>message</div>}/>
